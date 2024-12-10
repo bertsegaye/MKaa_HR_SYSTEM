@@ -11,8 +11,8 @@ function Search({ bgColor = "none", border = "none" }) {
       </button>
       <div>
         <input
-          className="ml-4 appearance-none border-none focus:outline-none focus:ring-0 bg-transparent text-slate-lght placeholder:font-normal placeholder:text-slate-lght"
-          placeholder="search..."
+          className="ml-4 appearance-none border-none focus:outline-none focus:ring-0 bg-transparent text-slate-lght placeholder:font-normal placeholder:text-slate-lght text-lg"
+          placeholder="Search..."
         />
       </div>
     </div>
