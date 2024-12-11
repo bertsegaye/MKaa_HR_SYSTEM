@@ -1,51 +1,49 @@
+import { useState } from "react";
 import {
-  attendanceSvg,
-  dashboardSvg,
-  departmentSvg,
-  leaveSvg,
-  manageSvg,
-  payrollSvg,
-  profileSvg,
-  reportSvg,
-  searchSvg,
-  setUpSvg,
-  settingSvg,
-  trainingSvg,
-  vaccancySvg,
+  AttendanceSvg,
+  DashboardSvg,
+  DepartmentSvg,
+  LeaveSvg,
+  ManageSvg,
+  PayrollSvg,
+  ProfileSvg,
+  ReportSvg,
+  SearchSvg,
+  SetUpSvg,
+  SettingSvg,
+  TrainingSvg,
+  VacancySvg,
 } from "../../assets/icons";
 
 const navigation = [
   {
     name: "Dashboard",
     href: "#",
-    icon: dashboardSvg,
-    count: "5",
+    icon: DashboardSvg,
     current: false,
   },
   {
     name: "Setup",
     href: "#",
-    icon: setUpSvg,
+    icon: SetUpSvg,
     current: true,
   },
   {
     name: "Manage Employee",
     href: "#",
-    icon: manageSvg,
-    count: "12",
+    icon: ManageSvg,
     current: false,
   },
   {
     name: "Departments",
     href: "#",
-    icon: departmentSvg,
-    count: "20+",
+    icon: DepartmentSvg,
     current: false,
   },
   {
     name: "Attendance",
     href: "#",
-    icon: attendanceSvg,
+    icon: AttendanceSvg,
     current: false,
   },
 ];
@@ -67,39 +65,61 @@ export default function SideBar() {
       <nav className="flex flex-1 flex-col">
         <ul role="list" className="">
           {navigation.map((item) => (
-            <li key={item.name} className="list-none">
-              <div
-                className={classNames(
-                  item.current ? "border-l-4 border-primary bg-[#E8E8E8]" : "",
-                  "pl-6 hover:bg-[#E8E8E8] overflow-hidden py-2"
-                )}
-              >
-                <a
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? " text-primary"
-                      : "text-gray-700  hover:text-primary",
-                    "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 "
-                  )}
-                >
-                  <img
-                    src={item.icon}
-                    aria-hidden="true"
-                    className={classNames(
-                      item.current
-                        ? "text-primary"
-                        : "text-gray-400 hover:bg-primary group-hover:text-primary",
-                      "h-6 w-6 shrink-0"
-                    )}
-                  />
-                  {item.name}
-                </a>
-              </div>
-            </li>
+            <SideBarEl item={item} key={item.name} />
           ))}
         </ul>
       </nav>
     </div>
+  );
+}
+
+function SideBarEl({ item }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  return (
+    <li
+      key={item.name}
+      className="list-none"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div
+        className={classNames(
+          item.current ? "border-l-4 border-primary bg-[#E8E8E8]" : "",
+          "pl-6 hover:bg-[#E8E8E8] overflow-hidden py-2"
+        )}
+      >
+        <a
+          href={item.href}
+          className={classNames(
+            item.current ? "text-primary" : "text-gray-700 hover:text-primary",
+            "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 "
+          )}
+        >
+          {/* <img
+        src={item.icon}
+        aria-hidden="true"
+        className={classNames(
+          item.current
+            ? "text-primary"
+            : "text-gray-400 hover:bg-primary group-hover:text-primary",
+          "h-6 w-6 shrink-0"
+        )}
+      /> */}
+          <item.icon current={item.current} isHovered={isHovered} />
+          <p className={classNames(item.current ? "text-primary" : "")}>
+            {item.name}
+          </p>
+        </a>
+      </div>
+    </li>
   );
 }

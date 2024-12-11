@@ -1,4 +1,4 @@
-import { avatarSvg, notificationSvg } from "../assets/icons";
+import { AvatarSvg, NotificationSvg } from "../assets/icons";
 import { logoPng } from "../assets/img";
 import Search from "./ui/Search";
 function Navbar() {
@@ -16,10 +16,10 @@ function Navbar() {
       </div>
       <div className="flex justify-end gap-4 mr-16">
         <div className="p-2 bg-green-dark w-fit flex items-center justify-center rounded-lg">
-          <img className="" src={avatarSvg} alt="avatar svg" />
+          <AvatarSvg />
         </div>
         <div className="flex items-center justify-center p-2 bg-slate-lght w-fit rounded-lg">
-          <img src={notificationSvg} alt="notification icon" />
+          <NotificationSvg />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { searchSvg } from "../../assets/icons";
+import { SearchSvg } from "../../assets/icons";
 
 function Search({ bgColor = "none", border = "none" }) {
   return (
@@ -6,8 +6,8 @@ function Search({ bgColor = "none", border = "none" }) {
       className="p-2 flex items-center justify-center"
       style={{ backgroundColor: bgColor, border }}
     >
-      <button>
-        <img src={searchSvg} alt="search icon" />
+      <button className="">
+        <SearchSvg />
       </button>
       <div>
         <input

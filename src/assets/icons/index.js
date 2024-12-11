@@ -1,33 +1,33 @@
-import avatarSvg from "./nav/avatar.svg";
-import notificationSvg from "./nav/notification.svg";
-import searchSvg from "./nav/search.svg";
-import attendanceSvg from "./sideBar/attendanceSvg.svg";
-import dashboardSvg from "./sideBar/dashboardSvg.svg";
-import departmentSvg from "./sideBar/departmentSvg.svg";
-import leaveSvg from "./sideBar/leaveSvg.svg";
-import manageSvg from "./sideBar/manageSvg.svg";
-import payrollSvg from "./sideBar/payrollSvg.svg";
-import profileSvg from "./sideBar/profileSvg.svg";
-import reportSvg from "./sideBar/reportSvg.svg";
-import settingSvg from "./sideBar/settingSvg.svg";
-import setUpSvg from "./sideBar/setUpSvg.svg";
-import trainingSvg from "./sideBar/trainingSvg.svg";
-import vaccancySvg from "./sideBar/vaccancySvg.svg";
+import AvatarSvg from "./nav/Avatar.jsx";
+import NotificationSvg from "./nav/Notification.jsx";
+import SearchSvg from "./nav/Search.jsx";
+import AttendanceSvg from "./sideBar/AttendanceSvg.jsx";
+import DashboardSvg from "./sideBar/DashboardSvg.jsx";
+import DepartmentSvg from "./sideBar/DepartmentSvg.jsx";
+import LeaveSvg from "./sideBar/LeaveSvg.jsx";
+import ManageSvg from "./sideBar/ManageSvg.jsx";
+import PayrollSvg from "./sideBar/PayrollSvg.jsx";
+import ProfileSvg from "./sideBar/ProfileSvg.jsx";
+import ReportSvg from "./sideBar/ReportSvg.jsx";
+import SettingSvg from "./sideBar/SettingSvg.jsx";
+import SetUpSvg from "./sideBar/SetupSvg.jsx";
+import TrainingSvg from "./sideBar/TrainingSvg.jsx";
+import VacancySvg from "./sideBar/VacancySvg.jsx";
 
 export {
-  attendanceSvg,
-  avatarSvg,
-  dashboardSvg,
-  departmentSvg,
-  leaveSvg,
-  manageSvg,
-  notificationSvg,
-  payrollSvg,
-  profileSvg,
-  reportSvg,
-  searchSvg,
-  setUpSvg,
-  settingSvg,
-  trainingSvg,
-  vaccancySvg,
+  AttendanceSvg,
+  AvatarSvg,
+  DashboardSvg,
+  DepartmentSvg,
+  LeaveSvg,
+  ManageSvg,
+  NotificationSvg,
+  PayrollSvg,
+  ProfileSvg,
+  ReportSvg,
+  SearchSvg,
+  SetUpSvg,
+  SettingSvg,
+  TrainingSvg,
+  VacancySvg,
 };
