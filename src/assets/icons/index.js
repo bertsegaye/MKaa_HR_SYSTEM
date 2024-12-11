@@ -6,6 +6,7 @@ import DashboardSvg from "./sideBar/DashboardSvg.jsx";
 import DepartmentSvg from "./sideBar/DepartmentSvg.jsx";
 import LeaveSvg from "./sideBar/LeaveSvg.jsx";
 import ManageSvg from "./sideBar/ManageSvg.jsx";
+import MoreSvg from "./sideBar/MoreSvg.jsx";
 import PayrollSvg from "./sideBar/PayrollSvg.jsx";
 import ProfileSvg from "./sideBar/ProfileSvg.jsx";
 import ReportSvg from "./sideBar/ReportSvg.jsx";
@@ -21,6 +22,7 @@ export {
   DepartmentSvg,
   LeaveSvg,
   ManageSvg,
+  MoreSvg,
   NotificationSvg,
   PayrollSvg,
   ProfileSvg,

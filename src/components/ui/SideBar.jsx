@@ -15,18 +15,20 @@ import {
   VacancySvg,
 } from "../../assets/icons";
 
+import AccountProfile from "./AccountProfile";
+
 const navigation = [
   {
     name: "Dashboard",
     href: "#",
     icon: DashboardSvg,
-    current: false,
+    current: true,
   },
   {
     name: "Setup",
     href: "#",
     icon: SetUpSvg,
-    current: true,
+    current: false,
   },
   {
     name: "Manage Employee",
@@ -40,10 +42,53 @@ const navigation = [
     icon: DepartmentSvg,
     current: false,
   },
+
   {
     name: "Attendance",
     href: "#",
     icon: AttendanceSvg,
+    current: false,
+  },
+  {
+    name: "Training",
+    href: "#",
+    icon: TrainingSvg,
+    current: false,
+  },
+  {
+    name: "Leave",
+    href: "#",
+    icon: LeaveSvg,
+    current: false,
+  },
+  {
+    name: "Payroll",
+    href: "#",
+    icon: PayrollSvg,
+    current: false,
+  },
+  {
+    name: "Vacancy",
+    href: "#",
+    icon: VacancySvg,
+    current: false,
+  },
+  {
+    name: "Report",
+    href: "#",
+    icon: ReportSvg,
+    current: false,
+  },
+  {
+    name: "Profile",
+    href: "#",
+    icon: ProfileSvg,
+    current: false,
+  },
+  {
+    name: "Setting",
+    href: "#",
+    icon: SettingSvg,
     current: false,
   },
 ];
@@ -54,26 +99,24 @@ function classNames(...classes) {
 
 export default function SideBar() {
   return (
-    <div className="flex flex-col  shadow-2xl border-[#E8E8E8] bg-white w-70">
-      <div className="flex h-16 shrink-0 items-center">
-        <img
-          alt="Your Company"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-          className="h-8 w-auto"
-        />
+    <div className="shadow-2xl border-[#E8E8E8] bg-white w-70 h-full">
+      <div className="flex flex-col  pb-5">
+        <div className="flex h-24 shrink-0 items-start pt-4">
+          <AccountProfile />
+        </div>
+        <nav className="flex flex-1 flex-col">
+          <ul role="list" className="">
+            {navigation.map((item, index) => (
+              <SideBarEl item={item} index={index} key={item.name} />
+            ))}
+          </ul>
+        </nav>
       </div>
-      <nav className="flex flex-1 flex-col">
-        <ul role="list" className="">
-          {navigation.map((item) => (
-            <SideBarEl item={item} key={item.name} />
-          ))}
-        </ul>
-      </nav>
     </div>
   );
 }
 
-function SideBarEl({ item }) {
+function SideBarEl({ item, index }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -87,21 +130,26 @@ function SideBarEl({ item }) {
   return (
     <li
       key={item.name}
-      className="list-none"
+      className={classNames(
+        index === 4 || index === 8 ? "border-b-2 border-dotted pb-3" : "",
+        index === 5 || index === 9 ? "pt-2" : ""
+      )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div
         className={classNames(
-          item.current ? "border-l-4 border-primary bg-[#E8E8E8]" : "",
-          "pl-6 hover:bg-[#E8E8E8] overflow-hidden py-2"
+          item.current ? " bg-[#E8E8E8]" : "",
+          "hover:bg-[#E8E8E8] overflow-hidden py-[10px]"
         )}
       >
         <a
           href={item.href}
           className={classNames(
-            item.current ? "text-primary" : "text-gray-700 hover:text-primary",
-            "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 "
+            item.current || isHovered
+              ? "border-l-4 border-primary text-primary"
+              : "text-gray-700 hover:text-primary",
+            "pl-6 group flex gap-x-3 text-sm font-semibold leading-6 "
           )}
         >
           {/* <img
@@ -115,7 +163,12 @@ function SideBarEl({ item }) {
         )}
       /> */}
           <item.icon current={item.current} isHovered={isHovered} />
-          <p className={classNames(item.current ? "text-primary" : "")}>
+          <p
+            className={classNames(
+              item.current || isHovered ? "text-primary" : "",
+              "text-base"
+            )}
+          >
             {item.name}
           </p>
         </a>

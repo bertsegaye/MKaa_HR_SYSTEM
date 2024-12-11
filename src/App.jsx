@@ -6,10 +6,9 @@ export default function App() {
   return (
     <div className="text-3xl font-bold  h-svh">
       <Navbar />
-      <div className="w-full h-[88vh] flex">
-        {/* <div className="w-70 h-full scrollbar-hide"> */}
+      <div className="w-full h-[88vh] flex overflow-scroll scrollbar-hide">
         <SideBar />
-        {/* </div> */}
+
         <div className="w-full h-full overflow-scroll scrollbar-hide"></div>
       </div>
     </div>
