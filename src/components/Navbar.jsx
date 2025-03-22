@@ -3,7 +3,10 @@ import { logoPng } from "../assets/img";
 import Search from "./ui/Search";
 function Navbar() {
   return (
-    <div className="flex items-center justify-between py-2 bg-primary h-[12vh]">
+    <div
+      className="flex items-center justify-between py-5 bg-primary h-[12vh]"
+      style={{ padding: "4rem" }}
+    >
       <div className="flex items-center justify-center">
         <div className="w-64 pl-16">
           <img
