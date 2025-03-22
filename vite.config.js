@@ -6,5 +6,5 @@ export default defineConfig({
   // server: {
   //   port: 5000, // Change the port to 5000
   // },
-  plugins: [react()],
+  base: '/MKaa_HR_SYSTEM/',
 });
